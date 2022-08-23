@@ -1,21 +1,18 @@
 // Player selection
-// const playerCards = document.querySelectorAll(".player-card");
 
-// for (const playerCard of playerCards) {
-//     playerCard.addEventListener("click", function(event){
-//         const title = event.target;
-//         console.log(event.target)
-//     })
-// }
 const ol = document.createElement("ol");
 const playerSelectButton = document.querySelectorAll(".select-btn");
 for (const button of playerSelectButton) {
     button.addEventListener("click", function (event) {
         const li = document.createElement("li");
         li.innerText = event.target.parentNode.parentNode.children[0].innerText;
-        ol.appendChild(li);
 
-        console.log(li);
+        if (ol.childNodes.length < 5) {
+            ol.appendChild(li);
+            event.target.classList.add("disabled");
+        } else {
+            alert("can not select more than 5");
+        }
     });
 }
 const selectedPlayersCard = document.querySelector("#selected-players-card .card-body");

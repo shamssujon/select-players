@@ -1,6 +1,7 @@
 // Player selection
-
+const selectedPlayersCard = document.querySelector("#selected-players-card .card-body");
 const ol = document.createElement("ol");
+
 const playerSelectButton = document.querySelectorAll(".select-btn");
 for (const button of playerSelectButton) {
     button.addEventListener("click", function (event) {
@@ -15,8 +16,11 @@ for (const button of playerSelectButton) {
         }
     });
 }
-const selectedPlayersCard = document.querySelector("#selected-players-card .card-body");
+
 selectedPlayersCard.appendChild(ol);
+
+// console.log(ol.childNodes);
+// CAN NOT GET THE OL LENGTH !!!
 
 // Get number from Input
 function getNumberFromInput(inputId) {

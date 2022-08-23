@@ -216,6 +216,7 @@
                                             class="form-control"
                                             id="perPlayerCost"
                                             placeholder="Per Player"
+                                            min="0"
                                         />
                                         <label for="perPlayerCost">Per Player</label>
                                     </div>
@@ -252,7 +253,7 @@
                                         <label for="coachCost">Coach</label>
                                     </div>
                                     <div class="d-grid mt-2">
-                                        <button class="btn btn-lg btn-primary">
+                                        <button type="button" class="btn btn-lg btn-primary" id="total-cost-button">
                                             Calculate Total
                                         </button>
                                     </div>
@@ -260,7 +261,7 @@
                                         <input
                                             type="number"
                                             readonly
-                                            class="form-control-plaintext"
+                                            class="form-control-plaintext fw-bold"
                                             id="totalCost"
                                             placeholder="Total"
                                             value="0"

@@ -1,9 +1,9 @@
-// Player selection
+const playerCards = document.querySelectorAll(".player-card");
 const selectedPlayersCard = document.querySelector("#selected-players-card .card-body");
 const ol = document.createElement("ol");
 
-const playerSelectButton = document.querySelectorAll(".select-btn");
-for (const button of playerSelectButton) {
+for (const playerCard of playerCards) {
+    const button = playerCard.getElementsByClassName("select-btn")[0];
     button.addEventListener("click", function (event) {
         const li = document.createElement("li");
         li.innerText = event.target.parentNode.parentNode.children[0].innerText;
@@ -15,9 +15,33 @@ for (const button of playerSelectButton) {
             alert("can not select more than 5");
         }
     });
-}
 
+}
 selectedPlayersCard.appendChild(ol);
+console.log(ol.childNodes.length);
+
+// Player selection
+// const selectedPlayersCard = document.querySelector("#selected-players-card .card-body");
+// const ol = document.createElement("ol");
+
+// const playerSelectButton = document.querySelectorAll(".select-btn");
+// for (const button of playerSelectButton) {
+//     button.addEventListener("click", function (event) {
+//         const li = document.createElement("li");
+//         li.innerText = event.target.parentNode.parentNode.children[0].innerText;
+
+//         if (ol.childNodes.length < 5) {
+//             ol.appendChild(li);
+//             event.target.classList.add("disabled");
+//         } else {
+//             alert("can not select more than 5");
+//         }
+
+//         // console.log(ol.childNodes.length);
+//     });
+// }
+
+// selectedPlayersCard.appendChild(ol);
 
 // console.log(ol.childNodes);
 // CAN NOT GET THE OL LENGTH !!!
